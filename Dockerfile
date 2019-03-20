@@ -1,3 +1,5 @@
+#### run cmd  docker run -it -p 9000:9000 -v d:/docker/data:/data --name yzf -d wetalk/appserver
+######## /usr/sbin/init
 FROM centos:7
 
 RUN yum update -y \
@@ -15,7 +17,7 @@ RUN mkdir /data/appserver -p
 VOLUME /data/appserver
 CMD ["php-fpm"]
 WORKDIR /data/appserver
-CMD ["./yzf start"]
+CMD ["php", "/data/appserver/yzf", "start"]
 
 
 
