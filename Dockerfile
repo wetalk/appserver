@@ -12,9 +12,10 @@ RUN yum update -y \
 
 ENV PATH /opt/remi/php72/root/usr/bin:/opt/remi/php72/root/usr/sbin:$PATH
 RUN mkdir /data/appserver -p
-VOLUME /data
+VOLUME /data/appserver
 CMD ["php-fpm"]
 WORKDIR /data/appserver
 CMD ["./yzf start"]
+
 
 
